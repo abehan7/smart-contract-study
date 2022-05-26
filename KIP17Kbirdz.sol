@@ -104,7 +104,6 @@ contract KIP17Kbirdz is KIP17, KIP17Enumerable, KIP17Metadata, MinterRole {
     // =============================================================================
   }
 
-  // FIXME: 여기까지 봄
   function mintingInformation() external view returns (uint256[7] memory) {
     uint256[7] memory info = [
       _antibotInterval,
@@ -122,6 +121,7 @@ contract KIP17Kbirdz is KIP17, KIP17Enumerable, KIP17Metadata, MinterRole {
     publicMintEnabled = _state;
   }
 
+  // 여기는 어디서 쓰이는건지 잘 모르겠어
   function setupSale(
     uint256 newAntibotInterval,
     uint256 newMintLimitPerBlock,
@@ -140,6 +140,7 @@ contract KIP17Kbirdz is KIP17, KIP17Enumerable, KIP17Metadata, MinterRole {
     _mintPrice = newMintPrice;
   }
 
+  // FIXME: 여기까지 봄
   //Public Mint
   function publicMint(uint256 requestedCount) external payable {
     require(publicMintEnabled, "The public sale is not enabled!");
